@@ -71,7 +71,8 @@ app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
 //3.
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";             //3.2 mongoose.js--> copy link and changen database name test to wanderlust
+// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";             //3.2 mongoose.js--> copy link and changen database name test to wanderlust
+const MONGO_URL = process.env.MONGO_URI;
 
 main().then( () => {                 // 3.3 calls main function
     console.log("connected to db");
